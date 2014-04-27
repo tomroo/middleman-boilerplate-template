@@ -20,6 +20,8 @@ Than go to your working space for new middleman app and;
     cd ~/Desktop/
     middleman init my_new_website --template=webbox
     cd my_new_website/
+    rm -rf .git/ readme.md # remove current git info
+    git init               # crate your own git
     bundle install --path vendor/bundle # using Ruby 2.1.0
     rake # runs development server.
 
@@ -29,6 +31,8 @@ you can use:
     rake deploy
 
 for building and deploying static site to remote server via **rsync**.
+
+
 
 
 

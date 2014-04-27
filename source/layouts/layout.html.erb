@@ -28,5 +28,6 @@ HTML_DESCRIPTION = "Description..."
     <%= javascript_include_tag 'retina-0.0.2' %>
     <%= javascript_include_tag 'app' %>
     <%= yield_content :javascript %>
+    <%= partial "partials/google_analytics", :locals => {:analytics_id => "YOUR_ID"} %>
   </body>
 </html>
