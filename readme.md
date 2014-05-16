@@ -3,7 +3,7 @@
 This is a small bootstrap for quick web projects. This boilerplate includes;
 
 - [Twitter Bootstrap][1] 3.1.1
-- [Font Awesome][2] 4.0.3
+- [Font Awesome][2] 4.1.0
 - [jQuery][3] 1.11.0
 - RetinaJS 0.0.2 (fixed by me)
 

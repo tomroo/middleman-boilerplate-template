@@ -8,16 +8,16 @@ HTML_DESCRIPTION = "Description..."
     <meta charset="utf-8">
     <title><%= HTML_TITLE %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <%= partial "partials/meta", :locals => {:meta_keywords => "keywords...", :meta_description => "description..."} %>
     <%= partial "partials/open_graph", :locals => { :html_title => HTML_TITLE, :html_description => HTML_DESCRIPTION } %>
     <%= partial "partials/icons" %>
     <%= partial "partials/html_shim" %>
-    
+
     <base target="_blank">
 
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <%= stylesheet_link_tag 'application' %>
     <%= yield_content :css %>
   </head>
