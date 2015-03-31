@@ -33,10 +33,16 @@ you can use:
 for building and deploying static site to remote server via **rsync**.
 
 
+## Change Log
 
+**2015-03-31**
 
-
-
+* **https** cdn links for bootstrap + fontawesome
+* `middleman` ~>3.3.8
+* `ruby` 2.2.0
+* `bootstrap` 3.3.4
+* `jquery` 1.11.2
+* `fontawesome` 4.3.0
 
 
 
