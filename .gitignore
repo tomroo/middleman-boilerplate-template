@@ -2,7 +2,3 @@
 /build
 /.sass-cache
 vendor/bundle
-*.pdf
-*.jpg
-*.png
-*.gif

@@ -2,10 +2,10 @@
 
 This is a small bootstrap for quick web projects. This boilerplate includes;
 
-- [Twitter Bootstrap][1] 3.1.1
-- [Font Awesome][2] 4.1.0
-- [jQuery][3] 1.11.0
-- RetinaJS 0.0.2 (fixed by me)
+- [Twitter Bootstrap][1] 3.3.4
+- [Font Awesome][2] 4.3.0
+- [jQuery][3] 1.11.2
+- RetinaJS 0.0.2 (fixed by me - allowed CORS)
 
 ## Usage
 
@@ -34,6 +34,14 @@ for building and deploying static site to remote server via **rsync**.
 
 
 ## Change Log
+
+**2015-05-20**
+
+* `layout.html.erb` changed.
+* Google Analytics include works only under **production environment**.
+* `<body>` tag now contains `class="<%= page_classes %>"`
+* `locale` support, default locale is **Turkish** (`config.rb`) now!
+* **Active Support** enabled!
 
 **2015-03-31**
 

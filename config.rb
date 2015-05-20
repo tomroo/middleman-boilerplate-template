@@ -1,14 +1,18 @@
 require 'stringex'
 require 'time'
-
+require 'active_support/all'
 require "lib/custom_helpers"
 
 helpers CustomHelpers
 
 activate :livereload
+activate :i18n, :mount_at_root => :tr
+
 set :css_dir, 'public/css'
 set :js_dir, 'public/js'
 set :images_dir, 'public/images'
+
+set :site_production_url, 'http://example.com'
 
 configure :build do
   activate :minify_css

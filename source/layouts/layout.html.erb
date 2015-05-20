@@ -1,33 +1,45 @@
-<%
-HTML_TITLE = "Hello World..."
-HTML_DESCRIPTION = "Description..."
-%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title><%= HTML_TITLE %></title>
+    <title><%= @page_title %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <%= partial "partials/meta", :locals => {:meta_keywords => "keywords...", :meta_description => "description..."} %>
-    <%= partial "partials/open_graph", :locals => { :html_title => HTML_TITLE, :html_description => HTML_DESCRIPTION } %>
+    <%= partial "partials/meta", :locals => {
+        :meta => {
+            :keywords => @page_keywords,
+            :description => @page_description,
+        }
+    }%>
+    <%= partial "partials/open_graph", :locals => {
+        :meta => {
+            :title => @page_title,
+            :description => @page_description,
+            :url => @open_graph_url,
+            :site_name => @open_graph_site_name,
+            :image => @open_graph_image
+        }
+    }%>
     <%= partial "partials/icons" %>
     <%= partial "partials/html_shim" %>
 
     <base target="_blank">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <%= stylesheet_link_tag 'application' %>
     <%= yield_content :css %>
   </head>
-  <body>
+  <body class="<%= page_classes %>">
     <%= yield %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <%= javascript_include_tag 'retina-0.0.2' %>
     <%= javascript_include_tag 'app' %>
     <%= yield_content :javascript %>
-    <%= partial "partials/google_analytics", :locals => {:analytics_id => "YOUR_ID", :analytics_domain => "domain"} %>
+    <%= partial "partials/google_analytics", :locals => {
+        :analytics_id => "YOUR_ID",
+        :analytics_domain => "domain"
+    }%>
   </body>
 </html>

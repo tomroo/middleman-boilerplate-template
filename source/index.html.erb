@@ -1,7 +1,69 @@
+<%
+@page_title = "Hello from Index"
+@page_description = "This is a simple page description!"
+@page_keywords = "hello,world,middleman"
+
+@open_graph_url = "#{site_production_url}"
+@open_graph_site_name = "webBox"
+@open_graph_image = "#{site_production_url}/public/images/og-icon.png"
+%>
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            <h1>Hello World</h1>
+            <h1>Some Helper Methods</h1>
+            <h2>Active Support Helpers</h2>
+            <div class="table-responsive">
+                <table class="table table-striped table-custom-code">
+                    <tr>
+                        <th>Code</th>
+                        <th>Result</th>
+                    </tr>
+                    <tr>
+                        <td><%%= 5.minutes %></td>
+                        <td><%= 5.minutes %></td>
+                    </tr>
+                    <tr>
+                        <td><%%= 5.minutes.ago %></td>
+                        <td><%= 5.minutes.ago %></td>
+                    </tr>
+                    <tr>
+                        <td><%%= time_ago_in_words(Time.now - 5.minutes) %></td>
+                        <td><%= time_ago_in_words(Time.now - 5.minutes) %></td>
+                    </tr>
+                    <tr>
+                        <td><%%= time_ago_in_words(Time.now) %></td>
+                        <td><%= time_ago_in_words(Time.now) %></td>
+                    </tr>
+                    <tr>
+                        <td><%%= number_to_currency(1234567890.50) %></td>
+                        <td><%= number_to_currency(1234567890.50) %></td>
+                    </tr>
+                    <tr>
+                        <td><%%= number_to_currency(5900, precision: 3) %></td>
+                        <td><%= number_to_currency(5900, precision: 3) %></td>
+                    </tr>
+                    <tr>
+                        <td><%%= number_to_currency(5900, precision: 3, locale: :en) %></td>
+                        <td><%= number_to_currency(5900, precision: 3, locale: :en) %></td>
+                    </tr>
+                    <tr>
+                        <td><%%= I18n.locale %></td>
+                        <td><%= I18n.locale %></td>
+                    </tr>
+                    <tr>
+                        <td><%%= I18n.l Time.now, :format => "%d %B %Y %A" %></td>
+                        <td><%= I18n.l Time.now, :format => "%d %B %Y %A" %></td>
+                    </tr>
+                    <tr>
+                        <td><%%= I18n.l 5.days.ago, :format => "%d %B %Y %A" %></td>
+                        <td><%= I18n.l 5.days.ago, :format => "%d %B %Y %A" %></td>
+                    </tr>
+                    <tr>
+                        <td><%%= t('messages.hello').titlecase %> <%%= t 'messages.world' %></td>
+                        <td><%= t('messages.hello').titlecase %> <%= t 'messages.world' %></td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 </div>

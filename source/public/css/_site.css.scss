@@ -2,3 +2,13 @@ body {
   background-color: $site-global-bg;
   color: $site-global-fg;
 }
+
+.table-custom-code {
+  td, th {
+    vertical-align: middle !important;
+    padding: 1em 0 1em 1em !important;
+  }
+  td:first-child {
+    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+  } 
+}
