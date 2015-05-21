@@ -38,8 +38,9 @@
     <%= javascript_include_tag 'app' %>
     <%= yield_content :javascript %>
     <%= partial "partials/google_analytics", :locals => {
-        :analytics_id => "YOUR_ID",
-        :analytics_domain => "domain"
+        :analytics_id => "UA-52664816-7",
+        :analytics_domain => "auto"
     }%>
+    <!-- env <%= ENV['MM_ENV'] %> -->
   </body>
 </html>

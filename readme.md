@@ -66,6 +66,7 @@ Check out the [site](https://middleman-live-server.herokuapp.com/)!
 * Default index page now shows the template helper examples.
 * `config.ru` file added for run-time serving and deployment!
 * `ruby 2.2.0` for Gemfile + rbenv.
+* `Procfile` added for Heroku
 
 **2015-05-20**
 
