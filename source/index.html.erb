@@ -10,60 +10,113 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            <h1>Some Helper Methods</h1>
-            <h2>Active Support Helpers</h2>
-            <div class="table-responsive">
-                <table class="table table-striped table-custom-code">
-                    <tr>
-                        <th>Code</th>
-                        <th>Result</th>
-                    </tr>
-                    <tr>
-                        <td><%%= 5.minutes %></td>
-                        <td><%= 5.minutes %></td>
-                    </tr>
-                    <tr>
-                        <td><%%= 5.minutes.ago %></td>
-                        <td><%= 5.minutes.ago %></td>
-                    </tr>
-                    <tr>
-                        <td><%%= time_ago_in_words(Time.now - 5.minutes) %></td>
-                        <td><%= time_ago_in_words(Time.now - 5.minutes) %></td>
-                    </tr>
-                    <tr>
-                        <td><%%= time_ago_in_words(Time.now) %></td>
-                        <td><%= time_ago_in_words(Time.now) %></td>
-                    </tr>
-                    <tr>
-                        <td><%%= number_to_currency(1234567890.50) %></td>
-                        <td><%= number_to_currency(1234567890.50) %></td>
-                    </tr>
-                    <tr>
-                        <td><%%= number_to_currency(5900, precision: 3) %></td>
-                        <td><%= number_to_currency(5900, precision: 3) %></td>
-                    </tr>
-                    <tr>
-                        <td><%%= number_to_currency(5900, precision: 3, locale: :en) %></td>
-                        <td><%= number_to_currency(5900, precision: 3, locale: :en) %></td>
-                    </tr>
-                    <tr>
-                        <td><%%= I18n.locale %></td>
-                        <td><%= I18n.locale %></td>
-                    </tr>
-                    <tr>
-                        <td><%%= I18n.l Time.now, :format => "%d %B %Y %A" %></td>
-                        <td><%= I18n.l Time.now, :format => "%d %B %Y %A" %></td>
-                    </tr>
-                    <tr>
-                        <td><%%= I18n.l 5.days.ago, :format => "%d %B %Y %A" %></td>
-                        <td><%= I18n.l 5.days.ago, :format => "%d %B %Y %A" %></td>
-                    </tr>
-                    <tr>
-                        <td><%%= t('messages.hello').titlecase %> <%%= t 'messages.world' %></td>
-                        <td><%= t('messages.hello').titlecase %> <%= t 'messages.world' %></td>
-                    </tr>
-                </table>
-            </div>
+            <h1>Active Support Helpers</h1>
+            <p class="lead">
+                Original Ruby on Rails API documentation can be found <a href="http://api.rubyonrails.org/classes/ActiveSupport/NumberHelper.html">here</a>!
+            </p>
+            <hr/>
+            <h2><code>number_to_currency</code></h2>
+
+<% code("ruby") do %>
+number_to_currency(5900, precision: 3)              # => <%= number_to_currency(5900, precision: 3) %>
+number_to_currency(1234567890.50)                   # => <%= number_to_currency(1234567890.50) %>
+number_to_currency(5900, precision: 3, locale: :en) # => <%= number_to_currency(5900, precision: 3, locale: :en) %>
+number_to_currency(1234567890.50, unit: '&pound;', separator: ',', delimiter: '')                  # => <%= number_to_currency(1234567890.50, unit: '&pound;', separator: ',', delimiter: '') %>
+number_to_currency(1234567890.50, unit: '&pound;', separator: ',', delimiter: '', format: '%u %n') # => <%= number_to_currency(1234567890.50, unit: '&pound;', separator: ',', delimiter: '', format: '%u %n') %>
+<% end %>
+
+        <h2><code>number_to_delimited</code></h2>
+<% code("ruby") do %>
+number_to_delimited(12345678)                  # => <%= number_to_delimited(12345678)  %>
+number_to_delimited(12345678, delimiter: '.')  # => <%= number_to_delimited(12345678, delimiter: '.') %>
+number_to_delimited(12345678, delimiter: ',')  # => <%= number_to_delimited(12345678, delimiter: ',') %>
+<% end %>
+
+        <h2><code>number_to_human</code></h2>
+<% code("ruby") do %>
+number_to_human(1234567)              # => <%= number_to_human(1234567) %>
+number_to_human(1234567, locale: :en) # => <%= number_to_human(1234567, locale: :en) %>
+number_to_human(489939, precision: 2) # => <%= number_to_human(489939, precision: 2) %>
+
+number_to_human(500000, units: { unit: 'ml', thousand: 'lt' })     # => <%= number_to_human(500000, units: { unit: 'ml', thousand: 'lt' }) %>
+number_to_human(543934, units: :distance)                          # => <%= number_to_human(543934, units: :distance) %>
+number_to_human(343, units: :distance, precision: 1)               # => <%= number_to_human(343, units: :distance, precision: 1) %>
+number_to_human(343, units: :distance, precision: 1, locale: :en)  # => <%= number_to_human(343, units: :distance, precision: 1, locale: :en) %>
+
+number_to_human_size(123)                             # => <%= number_to_human_size(123) %>
+number_to_human_size(123, locale: :en)                # => <%= number_to_human_size(123, locale: :en) %>
+number_to_human_size(1234567890)                      # => <%= number_to_human_size(1234567890) %>
+number_to_human_size(1234567890123, precision: 5)     # => <%= number_to_human_size(1234567890123, precision: 5) %>
+<% end %>
+
+        <h2><code>number_to_percentage</code></h2>
+<% code("ruby") do %>
+number_to_percentage(100)                             # => <%= number_to_percentage(100) %>
+number_to_percentage(100, locale: :en)                # => <%= number_to_percentage(100, locale: :en) %>
+number_to_percentage(302.24398923423, precision: 5)   # => <%= number_to_percentage(302.24398923423, precision: 5) %>
+<% end %>
+
+        <h2><code>number_to_phone</code></h2>
+<% code("ruby") do %>
+number_to_phone(5321234567)                      # => <%= number_to_phone(5321234567) %>
+number_to_phone(5321234567, area_code: true)     # => <%= number_to_phone(5321234567, area_code: true) %>
+number_to_phone(5333771122, country_code: 90)    # => <%= number_to_phone(5333771122, country_code: 90) %>
+number_to_phone(2123112233, country_code: 90, extension: 6100, delimiter: '.') # => <%= number_to_phone(2123112233, country_code: 90, extension: 6100, delimiter: '.') %>
+<% end %>
+
+        <h2><code>number_to_rounded</code></h2>
+<% code("ruby") do %>
+number_to_rounded(111.2345, locale: :en)               # => <%= number_to_rounded(111.2345, locale: :en) %>
+number_to_rounded(111.2345)                            # => <%= number_to_rounded(111.2345) %>
+number_to_rounded(111.2345, precision: 1)              # => <%= number_to_rounded(111.2345, precision: 1) %>
+number_to_rounded(111.2345, significant: true)         # => <%= number_to_rounded(111.2345, significant: true) %>
+<% end %>
+        <hr/>
+
+        <h1>Other Template Helpers</h1>
+<% code("ruby") do %>
+5.minutes                            # => <%= 5.minutes %>
+5.hours                              # => <%= 5.hours %>
+10.years                             # => <%= 5.years %>
+
+5.minutes.ago                        # => <%= 5.minutes.ago %>
+2.days.ago                           # => <%= 2.days.ago %>
+
+2.days.since                         # => <%= 2.days.since %>
+1.day.since                          # => <%= 1.day.since %>
+
+2.months.from_now                    # => <%= 2.months.from_now %>
+6.hours.until                        # => <%= 6.hours.until %>
+<% end %>
+        <h2>Locale (i18n)</h2>
+<% code("ruby") do %>
+I18n.locale                                 # => <%= I18n.locale %>
+I18n.l Time.now, :format => "%d %B %Y %A"   # => <%= I18n.l Time.now, :format => "%d %B %Y %A" %>
+I18n.l 5.days.ago, :format => "%d %B %Y %A" # => <%= I18n.l 5.days.ago, :format => "%d %B %Y %A" %>
+
+t('messages.hello').titlecase               # => <%= t('messages.hello').titlecase %>
+t('messages.world')                         # => <%= t('messages.world') %>
+<% end %>
+        
+        <h2><code>time_ago_in_words</code></h2>
+<% code("ruby") do %>
+time_ago_in_words(Time.now)                            # => <%= time_ago_in_words(Time.now) %>
+time_ago_in_words(Time.now - 5.minutes)                # => <%= time_ago_in_words(Time.now - 5.minutes) %>
+time_ago_in_words(3.minutes.from_now)                  # => <%= time_ago_in_words(3.minutes.from_now) %>
+time_ago_in_words(Time.now, include_seconds: true)     # => <%= time_ago_in_words(Time.now, include_seconds: true) %>
+
+from_time = Time.now - 3.days - 14.minutes - 25.seconds
+time_ago_in_words(from_time)                          # => <%= time_ago_in_words(Time.now - 3.days - 14.minutes - 25.seconds) %>
+<% end %>
+
+        <h2><code>distance_of_time_in_words</code></h2>
+<% code("ruby") do %>
+from_time = Time.now
+distance_of_time_in_words(from_time, from_time + 60.hours)                                  # => <%= distance_of_time_in_words(Time.now, Time.now + 60.hours) %>
+distance_of_time_in_words(from_time, from_time + 4.years + 9.days + 30.minutes + 5.seconds) # => <%= distance_of_time_in_words(Time.now, Time.now + 4.years + 9.days + 30.minutes + 5.seconds) %>
+<% end %>
+
+
         </div>
     </div>
 </div>

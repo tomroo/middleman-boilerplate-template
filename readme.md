@@ -35,6 +35,19 @@ for building and deploying static site to remote server via **rsync**.
 
 ## Change Log
 
+**2015-05-21**
+
+* Syntax highlighting added
+* Color scheme added for syntax highlighting
+* Redcarpet added as Markdown renderer
+* Active Support gem integrated
+* libs/ folder deleted
+* custom helpers moved to `helper/` folder under `custom_helpers.rb` file
+* **i18n** locale dictionary files added for **Turkish** and **English**
+* Distance measurement vocabulary added for `tr.yml`
+* Default index page now shows the template helper examples.
+
+
 **2015-05-20**
 
 * `layout.html.erb` changed.

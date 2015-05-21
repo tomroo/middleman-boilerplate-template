@@ -202,6 +202,17 @@ tr:
       long: ! '%e %B %Y, %A, %H:%M'
       short: ! '%e %B, %H:%M'
     pm: öğleden sonra
+  distance:
+    centi:
+      one: "santimetre"
+      other: "santimetre"
+    unit:
+      one: "metre"
+      other: "metre"
+    thousand:
+      one: "kilometre"
+      other: "kilometre"
+    billion: "gazilyon metre"
   messages:
     hello: merhaba
-    world: dünya
+    world: dünya  
