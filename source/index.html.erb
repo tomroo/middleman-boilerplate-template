@@ -15,6 +15,7 @@
                 Original Ruby on Rails API documentation can be found <a href="http://api.rubyonrails.org/classes/ActiveSupport/NumberHelper.html">here</a>!
             </p>
             <hr/>
+
             <h2><code>number_to_currency</code></h2>
 
 <% code("ruby") do %>
@@ -87,6 +88,9 @@ number_to_rounded(111.2345, significant: true)         # => <%= number_to_rounde
 
 2.months.from_now                    # => <%= 2.months.from_now %>
 6.hours.until                        # => <%= 6.hours.until %>
+2.weeks                              # => <%= 2.weeks %>
+1.fortnight                          # => <%= 1.fortnight %>
+2.fortnights                         # => <%= 2.fortnights %>
 <% end %>
         <h2>Locale (i18n)</h2>
 <% code("ruby") do %>

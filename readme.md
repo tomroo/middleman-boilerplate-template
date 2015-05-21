@@ -32,6 +32,24 @@ you can use:
 
 for building and deploying static site to remote server via **rsync**.
 
+## Serve Realtime!
+
+Now, you can run your middleman app as a real server! Test it via
+
+```bash
+rake production
+# open http://127.0.0.1:9292 now
+```
+
+Thanx to [Sebastian Gräßl](https://github.com/bastilian) for **Rackup** tip!
+You can deploy your application to [Heroku](http://heroku.com) :)
+
+```bash
+heroku create my-awesome-middleman-app
+git push heroku master
+```
+
+Check out the [site](https://middleman-live-server.herokuapp.com/)!
 
 ## Change Log
 
@@ -46,7 +64,8 @@ for building and deploying static site to remote server via **rsync**.
 * **i18n** locale dictionary files added for **Turkish** and **English**
 * Distance measurement vocabulary added for `tr.yml`
 * Default index page now shows the template helper examples.
-
+* `config.ru` file added for run-time serving and deployment!
+* `ruby 2.2.0` for Gemfile + rbenv.
 
 **2015-05-20**
 
