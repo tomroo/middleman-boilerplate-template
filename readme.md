@@ -2,10 +2,14 @@
 
 This is a small bootstrap for quick web projects. This boilerplate includes;
 
-- [Twitter Bootstrap][1] 3.3.4
+- [Twitter Bootstrap][1] 3.3.5
 - [Font Awesome][2] 4.3.0
-- [jQuery][3] 1.11.2
+- [jQuery][3] 1.11.3
+- [html5shiv][4] 3.7.2
+- [Respond][5] 1.4.2
 - RetinaJS 0.0.2 (fixed by me - allowed CORS)
+
+You need `Ruby 2.2.2`.
 
 ## Usage
 
@@ -53,6 +57,11 @@ Check out the [site](https://middleman-live-server.herokuapp.com/)!
 
 ## Change Log
 
+**2015-06-29**
+
+* 3rd party libs updated...
+* Now using Ruby 2.2.2
+
 **2015-05-21**
 
 * Syntax highlighting added
@@ -86,8 +95,8 @@ Check out the [site](https://middleman-live-server.herokuapp.com/)!
 * `fontawesome` 4.3.0
 
 
-
-
 [1]: http://getbootstrap.com/
 [2]: http://fontawesome.io
 [3]: http://jquery.com/download/
+[4]: https://github.com/afarkas/html5shiv
+[5]: https://github.com/scottjehl/Respond
