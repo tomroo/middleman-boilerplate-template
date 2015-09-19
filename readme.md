@@ -26,7 +26,7 @@ Than go to your working space for new middleman app and;
     cd my_new_website/
     rm -rf .git/ readme.md # remove current git info
     git init               # crate your own git
-    bundle install --path vendor/bundle # using Ruby 2.1.2
+    bundle install --path vendor/bundle # using Ruby 2.2.2
     rake # runs development server.
 
 If you customize `config.rb` and uncomment `deploy` related parts
