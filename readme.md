@@ -3,7 +3,7 @@
 This is a small bootstrap for quick web projects. This boilerplate includes;
 
 - [Twitter Bootstrap][1] 3.3.5
-- [Font Awesome][2] 4.3.0
+- [Font Awesome][2] 4.4.0
 - [jQuery][3] 1.11.3
 - [html5shiv][4] 3.7.2
 - [Respond][5] 1.4.2
@@ -26,7 +26,7 @@ Than go to your working space for new middleman app and;
     cd my_new_website/
     rm -rf .git/ readme.md # remove current git info
     git init               # crate your own git
-    bundle install --path vendor/bundle # using Ruby 2.1.0
+    bundle install --path vendor/bundle # using Ruby 2.1.2
     rake # runs development server.
 
 If you customize `config.rb` and uncomment `deploy` related parts
@@ -56,6 +56,11 @@ git push heroku master
 Check out the [site](https://middleman-live-server.herokuapp.com/)!
 
 ## Change Log
+
+**2015-09-19**
+
+* Fontawesome 4.4.0
+* URL’s fixed for SSL/non-SSL usage
 
 **2015-06-29**
 
